@@ -97,7 +97,7 @@ const deleteNoteByIdHandler = (request, h) => {
 
     const index = notes.findIndex((note) => note.id === id);
 
-    if(index !== 1){
+    if(index !== -1){
         notes.splice(index, 1);
         const response = h.response({
             status: 'success',
@@ -108,7 +108,7 @@ const deleteNoteByIdHandler = (request, h) => {
     };
     const response = h.response({
         status: 'failed',
-        message: 'note failed to delete'
+        message: 'note failed to delete. id not found'
     });
     response.code(404);
     return response;
