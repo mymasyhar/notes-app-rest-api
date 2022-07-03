@@ -113,7 +113,6 @@ const deleteNoteByIdHandler = (request, h) => {
     response.code(404);
     return response;
 }
-
 export {
   addNoteHandler,
   getAllNotesHandler,
